@@ -1,7 +1,12 @@
 <template>
   <div class="q-pa-md">
     <div class="q-gutter-md row items-start">
-      <q-date mask="DD/MM/YYYY" v-model="pickedDate" @click="pickNewDate" minimal />
+      <q-date
+        mask="DD/MM/YYYY"
+        v-model="pickedDate"
+        @click="pickNewDate"
+        minimal
+      />
     </div>
   </div>
 </template>
@@ -22,9 +27,9 @@ export default {
       pickedDate.value = props.date;
     });
 
-    function pickNewDate() {
+    const pickNewDate = () => {
       emit("pickNewDate", pickedDate);
-    }
+    };
 
     return {
       pickedDate,

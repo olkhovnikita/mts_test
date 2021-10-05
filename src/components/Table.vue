@@ -83,7 +83,7 @@ export default {
     let errored = false;
     const loading = ref(false);
 
-    function fetchData(d) {
+    const fetchData = (d) => {
       axios
         .get(url + d)
         .then((response) => {
@@ -96,7 +96,7 @@ export default {
           errored = true;
         })
         .finally(() => (loading.value = false));
-    }
+    };
 
     onBeforeMount(() => {
       const userTable = localStorage.getItem("userTable");

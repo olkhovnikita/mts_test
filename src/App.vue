@@ -29,11 +29,11 @@ export default {
       }
     });
 
-    function pickNewDate(v) {
+    const pickNewDate = (v) => {
       date.value = v.value;
       localStorage.setItem("userDate", JSON.stringify(date.value));
       console.log(date.value);
-    }
+    };
 
     return {
       pickNewDate,
